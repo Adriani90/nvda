@@ -190,6 +190,7 @@ parser.add_argument(
 	"The default value is forced if secure mode is enabled.\n",
 )
 parser.add_argument(
+	"-g",
 	"--lang",
 	dest="language",
 	default="en",
@@ -218,7 +219,9 @@ parser.add_argument(
 	help="Starts NVDA in secure mode",
 )
 parser.add_argument(
-	"--disable-addons", action="store_true", dest="disableAddons", default=False, help="Disable all add-ons"
+	"-d",
+	"--disable-addons",
+	action="store_true", dest="disableAddons", default=False, help="Disable all add-ons"
 )
 parser.add_argument(
 	"--debug-logging",
@@ -230,6 +233,7 @@ parser.add_argument(
 	"as well as no logging option.",
 )
 parser.add_argument(
+	"-nol",
 	"--no-logging",
 	action="store_true",
 	dest="noLogging",
@@ -247,6 +251,7 @@ parser.add_argument(
 )
 installGroup = parser.add_mutually_exclusive_group()
 installGroup.add_argument(
+	"-i",
 	"--install",
 	action="store_true",
 	dest="install",
@@ -254,6 +259,7 @@ installGroup.add_argument(
 	help="Installs NVDA (starting the new copy after installation)",
 )
 installGroup.add_argument(
+	"-is",
 	"--install-silent",
 	action="store_true",
 	dest="installSilent",
@@ -261,6 +267,7 @@ installGroup.add_argument(
 	help="Installs NVDA silently (does not start the new copy after installation).",
 )
 installGroup.add_argument(
+	"-p",
 	"--create-portable",
 	action="store_true",
 	dest="createPortable",
@@ -269,6 +276,7 @@ installGroup.add_argument(
 	"Requires `--portable-path` to be specified.\n",
 )
 installGroup.add_argument(
+	"-ps",
 	"--create-portable-silent",
 	action="store_true",
 	dest="createPortableSilent",
@@ -297,6 +305,7 @@ parser.add_argument(
 	help="When installing, enable NVDA's start on the logon screen",
 )
 parser.add_argument(
+	"-cpc",
 	"--copy-portable-config",
 	action="store_true",
 	dest="copyPortableConfig",
